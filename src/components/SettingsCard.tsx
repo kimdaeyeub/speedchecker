@@ -18,63 +18,58 @@ function SettingsCard({
   onStart,
 }: SettingsCardProps) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center">
+    <div className="flex items-center justify-center h-full">
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-[420px] backdrop-blur-sm bg-opacity-90">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-          속도 측정 게임
+          정확도 테스트
         </h2>
         <div className="space-y-5">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
               목표물 개수
-            </label>
-            <select
-              value={targetCount}
-              onChange={(e) => setTargetCount(Number(e.target.value))}
-              className="mt-1 block w-full rounded-lg border-2 border-gray-200 shadow-sm focus:border-[#3498DB] focus:ring-[#3498DB] p-2.5 text-base transition-all duration-200"
-            >
-              <option value={10}>10개</option>
-              <option value={20}>20개</option>
-              <option value={30}>30개</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              수평 마우스 감도
             </label>
             <input
               type="number"
-              min="0.5"
+              min="1"
+              max="100"
+              value={targetCount}
+              onChange={(e) => setTargetCount(Number(e.target.value))}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3498DB] focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              마우스 가로 감도
+            </label>
+            <input
+              type="range"
+              min="0.1"
               max="2"
               step="0.1"
               value={horizontalSensitivity}
-              onChange={(e) => {
-                const value = Number(e.target.value);
-                if (value >= 0.5 && value <= 2) {
-                  setHorizontalSensitivity(value);
-                }
-              }}
-              className="mt-1 block w-full rounded-lg border-2 border-gray-200 shadow-sm focus:border-[#3498DB] focus:ring-[#3498DB] p-2.5 text-base transition-all duration-200"
+              onChange={(e) => setHorizontalSensitivity(Number(e.target.value))}
+              className="w-full"
             />
+            <div className="text-sm text-gray-600 mt-1">
+              {horizontalSensitivity.toFixed(1)}
+            </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              수직 마우스 감도
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              마우스 세로 감도
             </label>
             <input
-              type="number"
-              min="0.5"
+              type="range"
+              min="0.1"
               max="2"
               step="0.1"
               value={verticalSensitivity}
-              onChange={(e) => {
-                const value = Number(e.target.value);
-                if (value >= 0.5 && value <= 2) {
-                  setVerticalSensitivity(value);
-                }
-              }}
-              className="mt-1 block w-full rounded-lg border-2 border-gray-200 shadow-sm focus:border-[#3498DB] focus:ring-[#3498DB] p-2.5 text-base transition-all duration-200"
+              onChange={(e) => setVerticalSensitivity(Number(e.target.value))}
+              className="w-full"
             />
+            <div className="text-sm text-gray-600 mt-1">
+              {verticalSensitivity.toFixed(1)}
+            </div>
           </div>
           <button
             onClick={onStart}

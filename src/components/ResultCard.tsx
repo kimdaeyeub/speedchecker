@@ -12,7 +12,7 @@ function ResultCard({
   onRestart,
 }: ResultCardProps) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center">
+    <div className="flex items-center justify-center h-full">
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-[420px] backdrop-blur-sm bg-opacity-90">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           결과
@@ -34,7 +34,7 @@ function ResultCard({
           </div>
           <div className="bg-gray-50 p-5 rounded-xl">
             <p className="text-lg font-semibold text-gray-700 mb-1">
-              목표물 평균 제거 시간
+              목표물 평균 표시 시간
             </p>
             <p className="text-2xl font-bold text-[#3498DB]">
               {averageTargetTime}ms

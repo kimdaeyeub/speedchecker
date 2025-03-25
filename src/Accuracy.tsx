@@ -86,7 +86,7 @@ function Accuracy() {
 
   return (
     <div
-      className={`w-full h-screen ${
+      className={`flex-1 h-full ${
         isStarted && !endTime ? "bg-[#2FCC71]" : "bg-[#3498DB]"
       }`}
     >

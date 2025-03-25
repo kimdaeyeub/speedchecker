@@ -14,7 +14,7 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
         <Link
-          to="/reaction"
+          to="/reaction-time"
           className="bg-white p-8 rounded-lg shadow-md hover:-translate-y-1 transition-transform duration-200"
         >
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
