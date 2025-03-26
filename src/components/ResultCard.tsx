@@ -34,7 +34,7 @@ function ResultCard({
           </div>
           <div className="bg-gray-50 p-5 rounded-xl">
             <p className="text-lg font-semibold text-gray-700 mb-1">
-              목표물 평균 표시 시간
+              목표물 평균 제거 시간
             </p>
             <p className="text-2xl font-bold text-[#3498DB]">
               {averageTargetTime}ms
