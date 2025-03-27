@@ -12,8 +12,6 @@ interface Target {
 function Accuracy() {
   const [isStarted, setIsStarted] = useState(false);
   const [targetCount, setTargetCount] = useState(10);
-  const [horizontalSensitivity, setHorizontalSensitivity] = useState(1);
-  const [verticalSensitivity, setVerticalSensitivity] = useState(1);
   const [currentTarget, setCurrentTarget] = useState<Target | null>(null);
   const [startTime, setStartTime] = useState<number | null>(null);
   const [endTime, setEndTime] = useState<number | null>(null);
@@ -94,10 +92,6 @@ function Accuracy() {
         <SettingsCard
           targetCount={targetCount}
           setTargetCount={setTargetCount}
-          horizontalSensitivity={horizontalSensitivity}
-          setHorizontalSensitivity={setHorizontalSensitivity}
-          verticalSensitivity={verticalSensitivity}
-          setVerticalSensitivity={setVerticalSensitivity}
           onStart={handleStart}
         />
       ) : (
@@ -108,7 +102,6 @@ function Accuracy() {
               style={{
                 left: `${currentTarget.x}px`,
                 top: `${currentTarget.y}px`,
-                transform: `scale(${horizontalSensitivity}, ${verticalSensitivity})`,
               }}
               onClick={handleTargetClick}
             />

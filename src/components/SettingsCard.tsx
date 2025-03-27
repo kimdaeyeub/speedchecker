@@ -1,20 +1,12 @@
 interface SettingsCardProps {
   targetCount: number;
   setTargetCount: (count: number) => void;
-  horizontalSensitivity: number;
-  setHorizontalSensitivity: (value: number) => void;
-  verticalSensitivity: number;
-  setVerticalSensitivity: (value: number) => void;
   onStart: () => void;
 }
 
 function SettingsCard({
   targetCount,
   setTargetCount,
-  horizontalSensitivity,
-  setHorizontalSensitivity,
-  verticalSensitivity,
-  setVerticalSensitivity,
   onStart,
 }: SettingsCardProps) {
   return (
@@ -36,40 +28,6 @@ function SettingsCard({
               onChange={(e) => setTargetCount(Number(e.target.value))}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3498DB] focus:border-transparent"
             />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              마우스 가로 감도
-            </label>
-            <input
-              type="range"
-              min="0.1"
-              max="2"
-              step="0.1"
-              value={horizontalSensitivity}
-              onChange={(e) => setHorizontalSensitivity(Number(e.target.value))}
-              className="w-full"
-            />
-            <div className="text-sm text-gray-600 mt-1">
-              {horizontalSensitivity.toFixed(1)}
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              마우스 세로 감도
-            </label>
-            <input
-              type="range"
-              min="0.1"
-              max="2"
-              step="0.1"
-              value={verticalSensitivity}
-              onChange={(e) => setVerticalSensitivity(Number(e.target.value))}
-              className="w-full"
-            />
-            <div className="text-sm text-gray-600 mt-1">
-              {verticalSensitivity.toFixed(1)}
-            </div>
           </div>
           <button
             onClick={onStart}
